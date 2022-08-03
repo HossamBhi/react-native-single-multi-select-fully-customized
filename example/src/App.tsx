@@ -1,31 +1,14 @@
-import * as React from 'react';
-
-import { StyleSheet, View, Text } from 'react-native';
-import SingleMultiSelectFullyCustomized from 'react-native-single-multi-select-fully-customized';
+import React from 'react';
+import { useColorScheme } from 'react-native';
+import { DarkTheme, DefaultTheme, Provider } from 'react-native-paper';
+import Examples from './Examples';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    SingleMultiSelectFullyCustomized.multiply(3, 7).then(setResult);
-  }, []);
+  const schema = useColorScheme();
 
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <Provider theme={schema === 'dark' ? DarkTheme : DefaultTheme}>
+      <Examples />
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});

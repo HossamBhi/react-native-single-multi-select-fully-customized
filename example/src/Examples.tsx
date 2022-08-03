@@ -1,22 +1,3 @@
-# react-native-single-multi-select-fully-customized
-
-Simple single or multi select picker create to by fully costmoized as a modal for any use of picker. Its support (mutil theme, Checkbox, RadioButton) by using react-native-paper ( Thanks a lot ).
-
-## Installation
-
-```sh
-npm install react-native-single-multi-select-fully-customized
-```
-
-```sh
-npm install react-native-paper
-```
-
-## Usage
-
-### See example for more details
-
-```js
 import React, { useState } from 'react';
 import { View, ScrollView, Text, Pressable, Image } from 'react-native';
 import { useTheme } from 'react-native-paper';
@@ -156,15 +137,3 @@ export default function Examples() {
     </View>
   );
 }
-
-```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT
-
-
