@@ -47,9 +47,9 @@ export interface CustomizePickerProps {
   //   style for active item label
   itemActiveLabelStyle?: StyleProp<any>;
   // on item press
-  onItemPress: (item: { value: any }, index: Number) => void;
+  onItemPress: (item: any, index: Number) => void;
   //   items to display in modal
-  items: { label: any; value: any }[];
+  items: any[];
   //   if  modal hide when item click
   isBackAfterPick?: boolean;
   //   render custome JSX Elemnet for item
@@ -62,8 +62,14 @@ export interface CustomizePickerProps {
   selectedValue?: any;
   // if true show checkbox componetn
   isMultiPick?: boolean;
+  // hide checkbox default to false
+  hideCheckbox?: boolean;
   // if true show radio button component
   isSinglePick?: boolean;
+  //  retrun appropriate label
+  getLabel?: (item: any) => string;
+  //  retrun appropriate value
+  getValue?: (item: any) => string;
   /* ======> place holder component props <===== */
   // placeholder text
   placeholder?: string;
@@ -98,8 +104,14 @@ export interface CustomizePickerProps {
 
 // items interface props
 export interface ItemsProps {
+  //  retrun appropriate label
+  getLabel: (item: any) => string;
+  //  retrun appropriate value
+  getValue: (item: any) => string;
   // if true show checkbox componetn
   isMultiPick?: boolean;
+  // hide checkbox default to false
+  hideCheckbox?: boolean;
   // if true show radio button component
   isSinglePick?: boolean;
   //   for close modal
@@ -118,9 +130,9 @@ export interface ItemsProps {
   //   style for active item label
   itemActiveLabelStyle?: StyleProp<any>;
   // on item press
-  onItemPress: (item: { value: any }, index: Number) => void;
+  onItemPress: (item: any, index: Number) => void;
   //   items to display in modal
-  items: { label: any; value: any }[];
+  items: any[];
   //   if  modal hide when item click
   isBackAfterPick?: boolean;
   //   render custome JSX Elemnet for item
@@ -145,6 +157,8 @@ export interface ItemProps {
   firstItem: boolean;
   // if true show checkbox componetn
   isMultiPick?: boolean;
+  // hide checkbox default to false
+  hideCheckbox?: boolean;
   // if true show radio button component
   isSinglePick?: boolean;
   //   override props on check box react native paper

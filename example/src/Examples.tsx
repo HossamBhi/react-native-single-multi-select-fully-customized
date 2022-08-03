@@ -112,6 +112,14 @@ export default function Examples() {
             marginBottom: 16,
           }}
           isSinglePick={true}
+          renderItem={(item) => {
+            console.log('item: ', item);
+            return (
+              <View>
+                <Text>{item.label}</Text>
+              </View>
+            );
+          }}
         />
         <CustomizePicker
           key={'multi'}
@@ -128,7 +136,23 @@ export default function Examples() {
           selectedValue={multiPickerValue}
           placeholder={'Multi picker'}
           isMultiPick={true}
+          hideCheckbox={true}
           isBackAfterPick={false}
+          containerPlaceholderStyle={{
+            backgroundColor: '#333',
+            marginBottom: 16,
+          }}
+        />
+        <CustomizePicker
+          key={'custome label and value'}
+          items={[{ title: 'Title 1', id: 1 }]}
+          onItemPress={(item, index) => {
+            console.log('item: ', item, ',index: ', index);
+          }}
+          selectedValue={''}
+          placeholder={'Custome label and value'}
+          getLabel={(item) => item.title}
+          getValue={(item) => item.id}
           containerPlaceholderStyle={{
             backgroundColor: '#333',
           }}

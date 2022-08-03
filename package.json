@@ -1,6 +1,6 @@
 {
   "name": "react-native-single-multi-select-fully-customized",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Simple single or multi select picker create to by fully customized as a modal for any use of picker.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

@@ -21,6 +21,7 @@ const Item: FC<ItemProps> = ({
   firstItem,
   renderItemRight,
   renderItemLeft,
+  hideCheckbox,
 }) => {
   return (
     <Pressable
@@ -46,7 +47,7 @@ const Item: FC<ItemProps> = ({
       >
         {label}
       </CustomeText>
-      {isMultiPick && (
+      {isMultiPick && hideCheckbox !== true && (
         <Checkbox
           status={checked ? 'checked' : 'unchecked'}
           onPress={onItemPress}

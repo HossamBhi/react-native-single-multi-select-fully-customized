@@ -53,6 +53,9 @@ const CustomizePicker: FunctionComponent<CustomizePickerProps> = ({
   closeSearchIcon,
   searchInputProps,
   renderItems,
+  getLabel = (item) => item?.label,
+  getValue = (item) => item?.value,
+  hideCheckbox,
 }) => {
   const [interanlSearchValue, setInternalSearchValue] = useState('');
   const [isVisible, setIsVisible] = useState(false);
@@ -132,7 +135,7 @@ const CustomizePicker: FunctionComponent<CustomizePickerProps> = ({
               ) : (
                 <Items
                   items={items?.filter((item) =>
-                    item.label
+                    getLabel(item)
                       ?.toLocaleLowerCase()
                       .includes(
                         searchValue?.toLocaleLowerCase() ||
@@ -155,6 +158,9 @@ const CustomizePicker: FunctionComponent<CustomizePickerProps> = ({
                     isSinglePick,
                     renderItemRight,
                     renderItemLeft,
+                    getLabel,
+                    getValue,
+                    hideCheckbox,
                   }}
                 />
               )}

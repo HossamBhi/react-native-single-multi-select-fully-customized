@@ -20,6 +20,9 @@ const Items: FC<ItemsProps> = ({
   selectedValue,
   renderItemRight,
   renderItemLeft,
+  getLabel,
+  getValue,
+  hideCheckbox,
 }) => {
   const checkValue = useCallback(
     (value) => {
@@ -30,7 +33,10 @@ const Items: FC<ItemsProps> = ({
 
     [selectedValue]
   );
-
+  // get appropriate value
+  const getAppropValue = useCallback((item) => getValue(item), [getValue]);
+  // get appropriate label
+  const getAppropLabel = useCallback((item) => getLabel(item), [getLabel]);
   return (
     <View>
       {items.map(
@@ -38,14 +44,15 @@ const Items: FC<ItemsProps> = ({
           ? renderItem
           : (item: any, i) => (
               <Item
-                key={item.value || item.id || i}
+                key={getAppropValue(item)}
                 lastItem={items.length === i}
                 firstItem={i === 0}
-                label={item.label || 'No label item'}
-                value={item.value}
+                label={getAppropLabel(item) || 'No label item'}
+                value={getAppropValue(item)}
                 isMultiPick={isMultiPick || item.isMultiPick}
+                hideCheckbox={hideCheckbox}
                 isSinglePick={isSinglePick || item.isSinglePick}
-                checked={checkValue(item.value)}
+                checked={checkValue(getAppropValue(item))}
                 onItemPress={() => {
                   if (isMultiPick && !Array.isArray(selectedValue)) {
                     return Alert.alert(
