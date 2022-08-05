@@ -6,7 +6,6 @@ import type { ItemsProps } from './types';
 const Items: FC<ItemsProps> = ({
   items = [],
   isMultiPick,
-  isSinglePick,
   checkboxProps = {},
   radioButtonProps = {},
   itemActiveStyle,
@@ -22,7 +21,8 @@ const Items: FC<ItemsProps> = ({
   renderItemLeft,
   getLabel,
   getValue,
-  hideCheckbox,
+  showCheckbox,
+  showRadioButton,
 }) => {
   const checkValue = useCallback(
     (value) => {
@@ -50,8 +50,9 @@ const Items: FC<ItemsProps> = ({
                 label={getAppropLabel(item) || 'No label item'}
                 value={getAppropValue(item)}
                 isMultiPick={isMultiPick || item.isMultiPick}
-                hideCheckbox={hideCheckbox}
-                isSinglePick={isSinglePick || item.isSinglePick}
+                showRadioButton={showRadioButton}
+                showCheckbox={showCheckbox}
+                // isSinglePick={isSinglePick || item.isSinglePick}
                 checked={checkValue(getAppropValue(item))}
                 onItemPress={() => {
                   if (isMultiPick && !Array.isArray(selectedValue)) {

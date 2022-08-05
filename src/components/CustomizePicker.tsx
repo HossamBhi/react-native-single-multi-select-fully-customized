@@ -30,8 +30,8 @@ const CustomizePicker: FunctionComponent<CustomizePickerProps> = ({
   items = [],
   isBackAfterPick = true,
   renderItem,
-  isTabBar = false,
-  renderTabBar,
+  isTopBar = false,
+  renderTopBar,
   closeIcon,
   selectedValue,
   overlayStyle,
@@ -40,7 +40,6 @@ const CustomizePicker: FunctionComponent<CustomizePickerProps> = ({
   renderPlaceholder,
   placeholder,
   isMultiPick,
-  isSinglePick,
   renderItemRight,
   renderItemLeft,
   renderFooter,
@@ -55,7 +54,8 @@ const CustomizePicker: FunctionComponent<CustomizePickerProps> = ({
   renderItems,
   getLabel = (item) => item?.label,
   getValue = (item) => item?.value,
-  hideCheckbox,
+  showCheckbox = false,
+  showRadioButton = true,
 }) => {
   const [interanlSearchValue, setInternalSearchValue] = useState('');
   const [isVisible, setIsVisible] = useState(false);
@@ -108,9 +108,9 @@ const CustomizePicker: FunctionComponent<CustomizePickerProps> = ({
             ]}
           >
             <ScrollView>
-              {isTabBar &&
-                (renderTabBar ? (
-                  renderTabBar()
+              {isTopBar &&
+                (renderTopBar ? (
+                  renderTopBar()
                 ) : (
                   <TopBar
                     {...{
@@ -118,7 +118,7 @@ const CustomizePicker: FunctionComponent<CustomizePickerProps> = ({
                       searchValue: searchValue || interanlSearchValue,
                       setSearchValue: setSearchValue || setInternalSearchValue,
                       showSearch,
-                      placeholder: 'Typesome thing...',
+                      // placeholder: 'Typesome thing...',
                       onRequestClose: handleOnRequestClose,
                       closeIcon,
                       titleStyle,
@@ -155,12 +155,12 @@ const CustomizePicker: FunctionComponent<CustomizePickerProps> = ({
                     renderItem,
                     selectedValue,
                     isMultiPick,
-                    isSinglePick,
                     renderItemRight,
                     renderItemLeft,
                     getLabel,
                     getValue,
-                    hideCheckbox,
+                    showCheckbox,
+                    showRadioButton,
                   }}
                 />
               )}

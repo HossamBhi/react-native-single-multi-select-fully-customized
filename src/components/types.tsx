@@ -5,7 +5,6 @@ import type {
   ViewProps,
 } from 'react-native';
 
-//
 export interface CustomizePickerProps {
   /* ======> modal props <===== */
   //  show modal or not
@@ -23,10 +22,10 @@ export interface CustomizePickerProps {
   //  style for container inside overlay
   containerStyle?: StyleProp<any>;
   /* ======> tab bar props <===== */
-  //   if false then hide tabbar
-  isTabBar?: boolean;
-  //   render custome Tabbar JSX element
-  renderTabBar?: () => JSX.Element;
+  //   if false then hide topBar
+  isTopBar?: boolean;
+  //   render custome topBar JSX element
+  renderTopBar?: () => JSX.Element;
   //   custome icon for close modal button
   closeIcon?: JSX.Element;
   // title modal
@@ -49,7 +48,7 @@ export interface CustomizePickerProps {
   // on item press
   onItemPress: (item: any, index: Number) => void;
   //   items to display in modal
-  items: any[];
+  items?: any[];
   //   if  modal hide when item click
   isBackAfterPick?: boolean;
   //   render custome JSX Elemnet for item
@@ -62,10 +61,12 @@ export interface CustomizePickerProps {
   selectedValue?: any;
   // if true show checkbox componetn
   isMultiPick?: boolean;
-  // hide checkbox default to false
-  hideCheckbox?: boolean;
-  // if true show radio button component
-  isSinglePick?: boolean;
+  // show checkbox default to false
+  showCheckbox?: boolean;
+  // show radio button default to true
+  showRadioButton?: boolean;
+  // // if true show radio button component
+  // isSinglePick?: boolean;
   //  retrun appropriate label
   getLabel?: (item: any) => string;
   //  retrun appropriate value
@@ -91,7 +92,7 @@ export interface CustomizePickerProps {
   // search value
   searchValue?: string;
   // set Search value
-  setSearchValue?: any;
+  setSearchValue?: Function;
   // search place holder
   searchPlaceholder?: string;
   // render icon search for more customize
@@ -110,10 +111,10 @@ export interface ItemsProps {
   getValue: (item: any) => string;
   // if true show checkbox componetn
   isMultiPick?: boolean;
-  // hide checkbox default to false
-  hideCheckbox?: boolean;
-  // if true show radio button component
-  isSinglePick?: boolean;
+  // show checkbox default to false
+  showCheckbox?: boolean;
+  // show radio button default to true
+  showRadioButton?: boolean;
   //   for close modal
   onRequestClose: () => void;
   /* ======> item props <===== */
@@ -157,10 +158,10 @@ export interface ItemProps {
   firstItem: boolean;
   // if true show checkbox componetn
   isMultiPick?: boolean;
-  // hide checkbox default to false
-  hideCheckbox?: boolean;
-  // if true show radio button component
-  isSinglePick?: boolean;
+  // show checkbox default to false
+  showCheckbox?: boolean;
+  // show radio button default to true
+  showRadioButton?: boolean;
   //   override props on check box react native paper
   checkboxProps?: StyleProp<any>;
   //   override props on radio button react native paper

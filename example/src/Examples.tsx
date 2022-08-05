@@ -16,6 +16,14 @@ const DUMMY_ITEMS_1 = [
   { label: 'Gray', color: '#696969', value: '#696969' },
 ];
 
+const DUMMY_ITEMS = [
+  { name: 'Java', id: 1 },
+  { name: 'Javascript', id: 2 },
+  { name: 'React', id: 3 },
+  { name: 'React Native', id: 4 },
+  { name: 'Android', id: 5 },
+  { name: 'IOS', id: 6 },
+];
 export default function Examples() {
   const [selectedValue, setSelectedValue] = useState(DUMMY_ITEMS_1[0].value);
   const [showCustomePicker, setShowCustomePicker] = useState(false);
@@ -50,7 +58,7 @@ export default function Examples() {
             marginBottom: 16,
           }}
           placeholderOnpress={() => setShowCustomePicker(true)}
-          isTabBar={true}
+          isTopBar={true}
           overlayStyle={{ paddingHorizontal: 0 }}
           containerStyle={{ maxHeight: '100%', height: '100%' }}
           renderFooter={() => (
@@ -111,15 +119,28 @@ export default function Examples() {
             backgroundColor: '#333',
             marginBottom: 16,
           }}
-          isSinglePick={true}
-          renderItem={(item) => {
-            console.log('item: ', item);
-            return (
-              <View>
-                <Text>{item.label}</Text>
-              </View>
-            );
+          showRadioButton={false}
+        />
+        <CustomizePicker
+          key={'custome render item'}
+          items={DUMMY_ITEMS_1}
+          onItemPress={(item) => setSelectedValue(item.value)}
+          selectedValue={selectedValue}
+          placeholder={'Custome render item'}
+          containerPlaceholderStyle={{
+            backgroundColor: '#333',
+            marginBottom: 16,
           }}
+          renderItem={(item) => (
+            <Pressable
+              key={item.value}
+              onPress={() => console.log('render item: ', item)}
+            >
+              <Text style={{ padding: 8, color: colors.text }}>
+                {item.label}
+              </Text>
+            </Pressable>
+          )}
         />
         <CustomizePicker
           key={'multi'}
@@ -136,7 +157,7 @@ export default function Examples() {
           selectedValue={multiPickerValue}
           placeholder={'Multi picker'}
           isMultiPick={true}
-          hideCheckbox={true}
+          showRadioButton={false}
           isBackAfterPick={false}
           containerPlaceholderStyle={{
             backgroundColor: '#333',
@@ -145,17 +166,16 @@ export default function Examples() {
         />
         <CustomizePicker
           key={'custome label and value'}
-          items={[{ title: 'Title 1', id: 1 }]}
+          items={DUMMY_ITEMS}
           onItemPress={(item, index) => {
             console.log('item: ', item, ',index: ', index);
           }}
-          selectedValue={''}
+          selectedValue={DUMMY_ITEMS[0].id}
           placeholder={'Custome label and value'}
-          getLabel={(item) => item.title}
+          getLabel={(item) => item.name}
           getValue={(item) => item.id}
-          containerPlaceholderStyle={{
-            backgroundColor: '#333',
-          }}
+          containerPlaceholderStyle={{ backgroundColor: '#333' }}
+          containerStyle={{ backgroundColor: '#333' }}
         />
       </ScrollView>
     </View>

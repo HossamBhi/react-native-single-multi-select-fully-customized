@@ -11,7 +11,6 @@ const Item: FC<ItemProps> = ({
   checkboxProps,
   radioButtonProps,
   isMultiPick,
-  isSinglePick,
   value,
   itemActiveStyle = {},
   itemActiveLabelStyle,
@@ -21,7 +20,8 @@ const Item: FC<ItemProps> = ({
   firstItem,
   renderItemRight,
   renderItemLeft,
-  hideCheckbox,
+  showCheckbox,
+  showRadioButton,
 }) => {
   return (
     <Pressable
@@ -47,7 +47,7 @@ const Item: FC<ItemProps> = ({
       >
         {label}
       </CustomeText>
-      {isMultiPick && hideCheckbox !== true && (
+      {isMultiPick && showCheckbox === true && (
         <Checkbox
           status={checked ? 'checked' : 'unchecked'}
           onPress={onItemPress}
@@ -56,7 +56,7 @@ const Item: FC<ItemProps> = ({
           {...checkboxProps}
         />
       )}
-      {isSinglePick && (
+      {showRadioButton && (
         <RadioButton
           value={value}
           status={checked ? 'checked' : 'unchecked'}
