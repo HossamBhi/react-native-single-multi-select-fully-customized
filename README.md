@@ -2,6 +2,16 @@
 
 Simple single or multi select picker create to by fully costmoized as a modal for any use of picker. Its support (mutil theme, Checkbox, RadioButton) by using react-native-paper ( Thanks a lot ).
 
+## Screenshots
+
+![Examples](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/examples.jpg)
+![single picker full customize](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/example1.jpg)
+![render item example](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/custome_rener_item.jpg)
+![Custome label and value](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/custome_label_and_value.jpg)
+![multi picker](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/multi_picker.jpg)
+![single picker](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/single_picker.jpg)
+
+
 ## Installation
 
 ```sh
