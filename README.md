@@ -5,7 +5,7 @@ Simple single or multi select picker create to by fully costmoized as a modal fo
 ## Screenshots
 
 | Examples | single picker full customize | render item example | Custome label and value | multi picker | single picker
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | <img src="./example/src/assets/examples.jpg" width="150"> | <img src="./example/src/assets/example1.jpg" width="150"> | <img src="./example/src/assets/custome_rener_item.jpg" width="150"> | <img src="./example/src/assets/custome_label_and_value.jpg" width="150"> |<img src="./example/src/assets/multi_picker.jpg" width="150"> | <img src="./example/src/assets/single_picker.jpg" width="150">
 
 ## Installation
