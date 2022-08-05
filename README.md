@@ -4,13 +4,9 @@ Simple single or multi select picker create to by fully costmoized as a modal fo
 
 ## Screenshots
 
-![Examples](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/examples.jpg)
-![single picker full customize](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/example1.jpg)
-![render item example](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/custome_rener_item.jpg)
-![Custome label and value](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/custome_label_and_value.jpg)
-![multi picker](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/multi_picker.jpg)
-![single picker](https://github.com/HossamBhi/react-native-single-multi-select-fully-customized/blob/master/example/src/assets/single_picker.jpg)
-
+| Examples | single picker full customize | render item example | Custome label and value | multi picker | single picker
+| --- | --- | --- | --- | --- |
+| <img src="./example/src/assets/examples.jpg" width="150"> | <img src="./example/src/assets/example1.jpg" width="150"> | <img src="./example/src/assets/custome_rener_item.jpg" width="150"> | <img src="./example/src/assets/custome_label_and_value.jpg" width="150"> |<img src="./example/src/assets/multi_picker.jpg" width="150"> | <img src="./example/src/assets/single_picker.jpg" width="150">
 
 ## Installation
 
