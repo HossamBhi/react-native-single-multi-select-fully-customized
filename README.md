@@ -290,6 +290,6 @@ hint:
 Hi there, 
 
 It's my first package.
-I hope to contact me i you have any issue, have a feedback or any suggestion to optimize package or my skills too :). 
+I hope to contact me if you have any issue, have a feedback or any suggestion to optimize package or my skills too :). 
 
 
