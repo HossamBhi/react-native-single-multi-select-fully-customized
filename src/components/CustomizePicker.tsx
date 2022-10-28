@@ -3,7 +3,7 @@ import React, { FunctionComponent, useState } from 'react';
 import {
   Modal,
   Pressable,
-  ScrollView,
+  View,
   useWindowDimensions,
 } from 'react-native';
 import Items from './Items';
@@ -107,7 +107,7 @@ const CustomizePicker: FunctionComponent<CustomizePickerProps> = ({
               containerStyle,
             ]}
           >
-            <ScrollView>
+            <View>
               {isTopBar &&
                 (renderTopBar ? (
                   renderTopBar()
@@ -165,7 +165,7 @@ const CustomizePicker: FunctionComponent<CustomizePickerProps> = ({
                 />
               )}
               {renderFooter && renderFooter()}
-            </ScrollView>
+            </View>
           </Pressable>
         </Pressable>
       </Modal>

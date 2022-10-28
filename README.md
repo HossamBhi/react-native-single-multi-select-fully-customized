@@ -152,7 +152,7 @@ export default function Examples() {
             backgroundColor: '#333',
             marginBottom: 16,
           }}
-          renderItem={(item) => (
+          renderItem={({item}) => (
             <Pressable
               key={item.value}
               onPress={() => console.log('render item: ', item)}
@@ -251,7 +251,7 @@ export default function Examples() {
 | :-------- | :------- | :-------- | :------- |:-------- | :-------- |
 | items | array | no | items to display in list | [] | - |
 | renderItems | functional component | no | custome render items| undefined | items |
-| renderItem | functional component | no | custome render item | undefined | item |
+| renderItem | functional component | no | custome render item | undefined | FlatList renderItem prop |
 | renderItemRight | functional component | no | custome component in right of item | undefined | item |
 | renderItemLeft | functional component | no | custome component in left of item | undefined | item |
 | checkboxProps | react native paper checkboxProps | no | override checkbox props react-native-paper | undefined | - |

@@ -131,7 +131,7 @@ export default function Examples() {
             backgroundColor: '#333',
             marginBottom: 16,
           }}
-          renderItem={(item) => (
+          renderItem={({ item }) => (
             <Pressable
               key={item.value}
               onPress={() => console.log('render item: ', item)}
